@@ -2,39 +2,6 @@
 #pragma comment(lib, "CoalaMOD.lib")
 #include <CoalaMOD.h>
 
-//트랙 함수
-void startline(int px, int py, int pz); // 출발선
-void road_straight1(int px, int py, int pz);
-void road_straight2(int px, int py, int pz);
-void road_straight3(int px, int py, int pz);
-void road_straight4(int px, int py, int pz);
-void road_straight_z(int px, int py, int pz, int length);
-void road_straight_z2(int px, int py, int pz, int length);
-void road_straight_x(int px, int py, int pz, int length);
-void road_turnright1(int px, int py, int pz);
-void road_turnright2(int px, int py, int pz);
-void road_turnright3(int px, int py, int pz);
-void road_turnright4(int px, int py, int pz);
-void imsi_straight(int px, int py, int pz);
-
-//차고 함수
-void left_storefloor(int px, int py, int pz);
-void right_storefloor(int px, int py, int pz);
-void north_storefloor(int px, int py, int pz);
-void south_storefloor(int px, int py, int pz);
-void storepillar(int px, int py, int pz);
-void carstore(int px, int py, int pz);
-
-//트랙최종
-void make_track(int px, int py, int pz);
-
-//차고 최종
-void make_store(int px, int py, int pz);
-
-//합칠 때 김도균 함수
-void dogyun(int px, int py, int pz);
-
-
 //주연 함수
 
 //입구 터널 만들기
@@ -43,17 +10,16 @@ void entrance(int x, int y, int z) {
 	WoolID red = createWool(COLOR_RED);
 	WoolID orange = createWool(COLOR_ORANGE);
 	WoolID yellow = createWool(COLOR_YELLOW);
-	WoolID green = createWool(COLOR_LIME);
+	WoolID lime = createWool(COLOR_LIME);
 	WoolID blue = createWool(COLOR_BLUE);
 
 	//입구 통로 만들기
-
 	for (int i = 0; i < 7; i++) {
 		for (int j = 0; j < 5; j++) {
 			locateBlock(red, x + j, y, z + i);
 			locateBlock(orange, x + 5 + j, y, z + i);
 			locateBlock(yellow, x + 10 + j, y, z + i);
-			locateBlock(green, x + 15 + j, y, z + i);
+			locateBlock(lime, x + 15 + j, y, z + i);
 			locateBlock(blue, x + 20 + j, y, z + i);
 		}
 	}
@@ -64,8 +30,8 @@ void entrance(int x, int y, int z) {
 		locateBlock(orange, x + 7, y + i, z + 7);
 		locateBlock(yellow, x + 12, y + i, z - 1);
 		locateBlock(yellow, x + 12, y + i, z + 7);
-		locateBlock(green, x + 17, y + i, z - 1);
-		locateBlock(green, x + 17, y + i, z + 7);
+		locateBlock(lime, x + 17, y + i, z - 1);
+		locateBlock(lime, x + 17, y + i, z + 7);
 		locateBlock(blue, x + 22, y + i, z - 1);
 		locateBlock(blue, x + 22, y + i, z + 7);
 	}
@@ -73,7 +39,7 @@ void entrance(int x, int y, int z) {
 		locateBlock(red, x + 2, y + 5, z + i);
 		locateBlock(orange, x + 7, y + 5, z + i);
 		locateBlock(yellow, x + 12, y + 5, z + i);
-		locateBlock(green, x + 17, y + 5, z + i);
+		locateBlock(lime, x + 17, y + 5, z + i);
 		locateBlock(blue, x + 22, y + 5, z + i);
 	}
 	locateBlock(red, x + 2, y + 4, z);
@@ -82,24 +48,22 @@ void entrance(int x, int y, int z) {
 	locateBlock(orange, x + 7, y + 4, z + 6);
 	locateBlock(yellow, x + 12, y + 4, z);
 	locateBlock(yellow, x + 12, y + 4, z + 6);
-	locateBlock(green, x + 17, y + 4, z);
-	locateBlock(green, x + 17, y + 4, z + 6);
+	locateBlock(lime, x + 17, y + 4, z);
+	locateBlock(lime, x + 17, y + 4, z + 6);
 	locateBlock(blue, x + 22, y + 4, z);
 	locateBlock(blue, x + 22, y + 4, z + 6);
 
 }
-
 //입구 로고 만들기
 void logo(int x, int y, int z) {
 
 	WoolID red = createWool(COLOR_RED);
 	WoolID orange = createWool(COLOR_ORANGE);
 	WoolID yellow = createWool(COLOR_YELLOW);
-	WoolID green = createWool(COLOR_LIME);
+	WoolID lime = createWool(COLOR_LIME);
 	WoolID blue = createWool(COLOR_BLUE);
 
 	//SUPER 글자 만들기
-
 	for (int i = 0; i < 3; i++) {
 		locateBlock(blue, x, y + 5, z + i);
 		locateBlock(blue, x, y + 7, z + i);
@@ -124,12 +88,12 @@ void logo(int x, int y, int z) {
 	}
 
 	for (int i = 0; i < 3; i++) {
-		locateBlock(green, x, y + 5, z + 9 + i);
-		locateBlock(green, x, y + 7, z + 9 + i);
-		locateBlock(green, x, y + 9, z + 9 + i);
+		locateBlock(lime, x, y + 5, z + 9 + i);
+		locateBlock(lime, x, y + 7, z + 9 + i);
+		locateBlock(lime, x, y + 9, z + 9 + i);
 	}
-	locateBlock(green, x, y + 6, z + 9);
-	locateBlock(green, x, y + 8, z + 9);
+	locateBlock(lime, x, y + 6, z + 9);
+	locateBlock(lime, x, y + 8, z + 9);
 
 	for (int i = 0; i < 5; i++) {
 		locateBlock(yellow, x, y + 5 + i, z + 12);
@@ -140,7 +104,6 @@ void logo(int x, int y, int z) {
 		locateBlock(yellow, x, y + 7 + i, z + 14);
 		locateBlock(yellow, x, y + 5 + i, z + 15);
 	}
-
 	//MARIO 글자 만들기
 	for (int i = 0; i < 5; i++) {
 		locateBlock(red, x, y + i, z - 1);
@@ -153,11 +116,11 @@ void logo(int x, int y, int z) {
 	locateBlock(red, x, y + 4, z + 2);
 
 	for (int i = 0; i < 5; i++) {
-		locateBlock(green, x, y + i, z + 4);
-		locateBlock(green, x, y + i, z + 6);
+		locateBlock(lime, x, y + i, z + 4);
+		locateBlock(lime, x, y + i, z + 6);
 	}
-	locateBlock(green, x, y + 4, z + 5);
-	locateBlock(green, x, y + 2, z + 5);
+	locateBlock(lime, x, y + 4, z + 5);
+	locateBlock(lime, x, y + 2, z + 5);
 
 	for (int i = 0; i < 5; i++) {
 		locateBlock(yellow, x, y + i, z + 7);
@@ -168,22 +131,18 @@ void logo(int x, int y, int z) {
 		locateBlock(yellow, x, y + 2 + i, z + 9);
 		locateBlock(yellow, x, y + i, z + 10);
 	}
-
 	for (int i = 0; i < 3; i++) {
 		locateBlock(blue, x, y, z + 11 + i);
 		locateBlock(blue, x, y + 4, z + 11 + i);
 		locateBlock(blue, x, y + 1 + i, z + 12);
 	}
-
 	for (int i = 0; i < 5; i++) {
 		locateBlock(orange, x, y + i, z + 14);
 		locateBlock(orange, x, y + i, z + 16);
 	}
 	locateBlock(orange, x, y + 4, z + 15);
 	locateBlock(orange, x, y, z + 15);
-
 }
-
 //마리오 캐릭터 만들기
 void mario(int x, int y, int z) {
 
@@ -285,7 +244,6 @@ void mario(int x, int y, int z) {
 		locateBlock(red, x, y + 17, z + 3 + i);
 	}
 }
-
 // 초록기둥 원 만들기
 void greencircle1(int x, int y, int z) {
 
@@ -297,7 +255,6 @@ void greencircle1(int x, int y, int z) {
 		locateWool(green, (x + 8) + a, y, z);
 		locateWool(green, (x + 8) + a, y, z + 23);
 	}
-
 	locateWool(green, x + 1, y, z + 6);
 	locateWool(green, x + 1, y, z + 7);
 	locateWool(green, x + 1, y, z + 16);
@@ -342,9 +299,7 @@ void greencircle1(int x, int y, int z) {
 	locateWool(green, x + 21, y, z + 5);
 	locateWool(green, x + 21, y, z + 18);
 	locateWool(green, x + 21, y, z + 19);
-
 }
-
 // 초록기둥 더 큰원 만들기
 void greencircle2(int x, int y, int z) {
 
@@ -432,18 +387,15 @@ void greencircle2(int x, int y, int z) {
 	locateWool(green, x + 23, y + 12, z + 18);
 	locateWool(green, x + 23, y + 12, z + 17);
 	locateWool(green, x + 23, y + 12, z + 16);
-
 }
-
 // 초록기둥 만들기
 void greencylinder(int x, int y, int z) {
-
 	for (int a = 0; a < 12; a++) greencircle1(x, y + a, z);
 	for (int a = 0; a < 6; a++) greencircle2(x, y + a, z);
 }
-
 //식물 잎 만들기
 void leaf(int x, int y, int z) {
+
 	WoolID green = createWool(COLOR_GREEN);
 	WoolID lime = createWool(COLOR_LIME);
 	WoolID black = createWool(COLOR_BLACK);
@@ -478,9 +430,9 @@ void leaf(int x, int y, int z) {
 	locateBlock(green, x, y + 7, z - 2);
 	locateBlock(green, x, y + 6, z - 1);
 }
-
 //식물 잎 만들기2
 void leaf2(int x, int y, int z) {
+	
 	WoolID green = createWool(COLOR_GREEN);
 	WoolID lime = createWool(COLOR_LIME);
 	WoolID black = createWool(COLOR_BLACK);
@@ -515,9 +467,9 @@ void leaf2(int x, int y, int z) {
 	locateBlock(lime, x, y + 7, z + 3);
 	locateBlock(green, x, y + 6, z + 2);
 }
-
 //식물 만들기
 void plant(int x, int y, int z) {
+
 	WoolID green = createWool(COLOR_GREEN);
 	WoolID lime = createWool(COLOR_LIME);
 	WoolID red = createWool(COLOR_RED);
@@ -665,25 +617,25 @@ void plant(int x, int y, int z) {
 		locateBlock(white, x, y + 30 + i, z + 5);
 	}
 }
-
 //초록 기둥 + 식물 합치기
 void plus(int x, int y, int z) {
 	greencylinder(x, y, z);
 	plant(x + 11, y + 6, z + 11);
 }
-
 //광장 바닥 만들기
 void squre(int x, int y, int z, int a, int b) {
-	BlockID iron = createBlock(BLOCK_SMOOTH_SAND_STONE);
+
+	BlockID sand = createBlock(BLOCK_SMOOTH_SAND_STONE);
+
 	for (int i = 0; i < a; i++) {
 		for (int j = 0; j < b; j++) {
-			locateBlock(iron, x + i, y, z + j);
+			locateBlock(sand, x + i, y, z + j);
 		}
 	}
 }
- 
  //입구 주변을 꾸며줄 초록 선인장 캐릭터 만들기
 void character(int x, int y, int z) {
+
 	WoolID black = createWool(COLOR_BLACK);
 	WoolID green = createWool(COLOR_GREEN);
 
@@ -726,7 +678,6 @@ void character(int x, int y, int z) {
 	locateBlock(black, x, y + 10, z + 9);
 	locateBlock(black, x, y + 11, z + 9);
 }
-
  //초록 선인장 5개를 세트로 묶기
 void set(int x, int y, int z) {
 	character(x, y - 4, z);
@@ -746,7 +697,9 @@ void jooyeon(int x, int y, int z) {
 	set(x, y, z + 35);
 }
 
-//두홍
+
+
+//두홍 : 함수에서 쓸 블록 선언
 BlockID empty = createBlock(BLOCK_AIR);
 BlockID glass = createBlock(BLOCK_GLASS);
 BlockID blue = createBlock(BLOCK_LAPIS_LAZULI);
@@ -761,29 +714,6 @@ WoolID wool_G = createWool(COLOR_GREEN);
 WoolID wool_Y = createWool(COLOR_YELLOW);
 WoolID wool_BR = createWool(COLOR_BROWN);
 StairsID stairs = createStairs(STAIRS_RED_SANDSTONE, false);
-
-//홍찬
-BlockID quartz = createBlock(BLOCK_NETHER_QUARTZ);
-BlockID gold = createBlock(BLOCK_GOLD);
-CarpetID red = createCarpet(COLOR_RED);
-CarpetID white = createCarpet(COLOR_WHITE);
-WoolID redwool = createWool(COLOR_RED);
-WoolID black = createWool(COLOR_BLACK);
-WoolID green = createWool(COLOR_LIME);
-WoolID yellow = createWool(COLOR_YELLOW);
-BricksID bricks = createBricks(BRICKS);
-
-//도균
-int px, py, pz;
-BlockID stone = createBlock(BLOCK_STONE);
-//BlockID glass = createBlock(BLOCK_GLASS);
-BlockID iron = createBlock(BLOCK_IRON);
-//BlockID gold = createBlock(BLOCK_GOLD);
-SlabID stone_slab = createSlab(SLAB_STONE);
-BricksID st_bricks = createBricks(BRICKS_STONE);
-//WoolID blue = createWool(COLOR_BLUE);
-//WoolID black = createWool(COLOR_BLACK);
-//WoolID white = createWool(COLOR_WHITE);
 
 //두홍 함수
 void Large_circle(int x, int y, int z) {
@@ -1434,6 +1364,8 @@ void Picture(int x, int y, int z) {
 	}
 
 }
+
+//합칠 때 김두홍 함수
 void doohong(int x, int y, int z) {
 
 	Large_cylinder(x, y, z);
@@ -1451,6 +1383,18 @@ void doohong(int x, int y, int z) {
 
 }
 
+
+
+//홍찬 : 함수에서 쓸 블록 선언
+BlockID quartz = createBlock(BLOCK_NETHER_QUARTZ);
+BlockID gold = createBlock(BLOCK_GOLD);
+CarpetID red = createCarpet(COLOR_RED);
+CarpetID white = createCarpet(COLOR_WHITE);
+WoolID redwool = createWool(COLOR_RED);
+WoolID black = createWool(COLOR_BLACK);
+WoolID green = createWool(COLOR_LIME);
+WoolID yellow = createWool(COLOR_YELLOW);
+BricksID bricks = createBricks(BRICKS);
 
 //홍찬 함수
 void arch(int x, int y, int z)
@@ -1866,6 +1810,8 @@ void star(int x, int y, int z)
 		locateBlock(yellow, x + i + 4, y, z - 11);
 	}
 }
+
+//합칠 때 윤홍찬 함수
 void hongchan(int x, int y, int z)
 {
 	floor(x, y, z);
@@ -1886,40 +1832,15 @@ void hongchan(int x, int y, int z)
 }
 
 
+
+//도균 : 함수에서 쓸 블록 선언
+int px, py, pz;
+BlockID stone = createBlock(BLOCK_STONE);
+BlockID iron = createBlock(BLOCK_IRON);
+SlabID stone_slab = createSlab(SLAB_STONE);
+BricksID st_bricks = createBricks(BRICKS_STONE);
+
 //도균 함수
-void dogyun(int px, int py, int pz) {
-	int x = px, y = py, z = pz;
-	make_track(x, y, z);
-	make_store(x + 13, y, z - 12);
-	make_store(x + 13, y, z + 5);
-}
-void make_store(int px, int py, int pz) {
-	int x = px, y = py, z = pz;
-	carstore(x, y, z);
-	storepillar(x, y, z);
-}
-void make_track(int px, int py, int pz) {
-	int x = px, y = py, z = pz;
-	startline(x, y, z);      //출발선 만들기
-
-	road_straight_z(x + 1, y, z - 3, 40);
-	road_turnright1(x + 1, y, z - 23);
-	road_straight_x(x + 5, y, z - 27, 20);
-	//locateBlock(blue,x + 5, y + 3, z - 27);
-	road_turnright2(x + 17, y, z - 27);
-	road_straight_z2(x + 31, y, z - 20, 80);
-
-	road_turnright3(x + 21, y, z + 16);
-	road_straight_x(x + 6, y, z + 30, 20);
-
-	road_turnright4(x + 5, y, z + 19);
-	//locateBlock(blue, x + 5, y+4, z + 19);
-	road_straight_z(x + 1, y, z + 15, 20);
-	road_straight1(x + 1, y, z + 3);
-	imsi_straight(x + 1, y, z + 1);
-
-
-}
 void imsi_straight(int px, int py, int pz) {
 	int x = px, y = py, z = pz;
 	locateBlock(gold, x, y, z);
@@ -2448,6 +2369,43 @@ void road_turnright4(int px, int py, int pz) {
 	}
 	locateBlock(gold, x - i, y + 1, z + 10 - i);
 }
+void make_store(int px, int py, int pz) {
+	int x = px, y = py, z = pz;
+	carstore(x, y, z);
+	storepillar(x, y, z);
+}
+void make_track(int px, int py, int pz) {
+	int x = px, y = py, z = pz;
+	startline(x, y, z);      //출발선 만들기
+
+	road_straight_z(x + 1, y, z - 3, 40);
+	road_turnright1(x + 1, y, z - 23);
+	road_straight_x(x + 5, y, z - 27, 20);
+	//locateBlock(blue,x + 5, y + 3, z - 27);
+	road_turnright2(x + 17, y, z - 27);
+	road_straight_z2(x + 31, y, z - 20, 80);
+
+	road_turnright3(x + 21, y, z + 16);
+	road_straight_x(x + 6, y, z + 30, 20);
+
+	road_turnright4(x + 5, y, z + 19);
+	//locateBlock(blue, x + 5, y+4, z + 19);
+	road_straight_z(x + 1, y, z + 15, 20);
+	road_straight1(x + 1, y, z + 3);
+	imsi_straight(x + 1, y, z + 1);
+}
+
+//합칠 때 김도균 함수
+void dogyun(int px, int py, int pz) {
+	int x = px, y = py, z = pz;
+	make_track(x, y, z);
+	make_store(x + 13, y, z - 12);
+	make_store(x + 13, y, z + 5);
+}
+
+
+
+//차고, 도로에 들어갈 차 함수 만들기
 void Red_Car_Frontside(int x, int y, int z) {
 
 	SlabID slab_stone = createSlab(SLAB_STONE, SLAB_UPPER);
@@ -2984,6 +2942,8 @@ void Yellow_Car_Backside(int x, int y, int z) {
 
 }
 
+
+
 int main()
 {
 	//차
@@ -3020,6 +2980,7 @@ int main()
 		locateBlock(empty, -37, y, 56);
 	}
 
+	//조원들 함수 합치기
 	hongchan(-1, 4, 14);
 	doohong(11, 4, 100);
 	jooyeon(-50, 4, 50);
