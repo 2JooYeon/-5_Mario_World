@@ -94,4 +94,33 @@ void doohong(int x, int y, int z)
 : 위의 함수들을 모두 합쳐서 좌표 하나를 기준으로 성 전체를 만드는 함수  
 void ***Color***Car***Direction***(int x, int y, int z)  
 : 색깔별로 차를 만드는 함수, 앞을 보는 차와 뒤를 보는 차 두가지로 frontside와 backside로 나누어서 만들었다.    
+###도균  
+void startline(int px, int py, int pz)  
+: 출발선  
+void road_straight1(int px, int py, int pz)  
+: z축선상 직선트랙을 구성하는 함수1  
+void road_straight2(int px, int py, int pz)  
+: z축선상 직선트랙을 구성하는 함수2  
+void road_straight3(int px, int py, int pz)  
+: x축선상 직선트랙을 구성하는 함수3  
+void road_straight4(int px, int py, int pz)  
+: x축선상 직선트랙을 구성하는 함수4  
+void road_straight_z(int px, int py, int pz, int length)  
+: -z방향 직선트랙  
+void road_straight_z2(int px, int py, int pz, int length)  
+: +z방향 직선트랙  
+void road_straight_x(int px, int py, int pz, int length)  
+: +x방향 직선트랙  
+void road_turnright1(int px, int py, int pz)  
+: -z방향 직선- > +x방향 직선으로 갈 때 코너  
+void road_turnright2(int px, int py, int pz)  
+: +x방향 직선- > +z방향 직선으로 갈 때 코너  
+void road_turnright3(int px, int py, int pz)  
+: +z방향 직선- > -x방향 직선으로 갈 때 코너  
+void road_turnright4(int px, int py, int pz)  
+: -x방향 직선- > -z방향 직선으로 갈 때 코너  
+void imsi_straight(int px, int py, int pz)  
+: 길이가 모자른 직선트랙 마저 채워주는 함수  
+
+
 
