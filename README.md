@@ -92,6 +92,6 @@ void Picture(int x, int y, int z)
 : 성벽에 마리오와 루이지의 그림을 그려서 마리오의 집이라는 것을 표현하는 함수  
 void doohong(int x, int y, int z)   
 : 위의 함수들을 모두 합쳐서 좌표 하나를 기준으로 성 전체를 만드는 함수  
-void ***Color***_Car_***Direction***(int x, int y, int z)
-: 색깔별로 차를 만드는 함수, 앞을 보는 차와 뒤를 보는 차 두가지로 frontside와 backside로 나누어서 만들었다.  
+void ***Color***Car***Direction***(int x, int y, int z)  
+: 색깔별로 차를 만드는 함수, 앞을 보는 차와 뒤를 보는 차 두가지로 frontside와 backside로 나누어서 만들었다.    
 
