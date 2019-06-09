@@ -62,36 +62,36 @@ void star(int x, int y, int z)
 void hongchan(int x, int y, int z)  
 : 위의 함수를 합쳐놓아 게스트하우스를 최종 완성하는 함수  
 ### 두홍
-Large_circle 함수  
+void Large_circle(int x, int y, int z)    
 : 큰 단층 원을 만드는 함수  
-Large_cylinder 함수   
+void Large_cylinder(int x, int y, int z)  
 : for문을 사용해서 큰 단층 원을 반복해 큰 원기둥을 만드는 함수  
-Small_circle 함수  
+void Small_circle(int x, int y, int z)   
 : 작은 단층 원을 만드는 함수  
-Small_cylinder 함수  
+void Small_cylinder(int x, int y, int z)  
 : for문을 사용해서 작은 단층 원을 반복해 작은 원기둥을 만드는 함수  
-Front_door 함수   
+void Front_door(int x, int y, int z)   
 : 큰 원기둥과 연결하여 성의 정문을 만드는 함수  
-Wall 함수  
+void Wall(int x, int y, int z)   
 : for문을 사용해서 성벽을 만드는 함수  
-First_Floor 함수  
+void First_floor(int x, int y, int z)  
 : 건물 아래층에 하얀색 양털블록을 까는 함수  
-Glass 함수  
+void Glass(int x, int y, int z)  
 : 건물 1층과 천장에 유리블록을 까는 함수  
-Roof 함수  
+void Roof(int x, int y, int z)   
 : Small_cylinder 함수로 만든 원기둥 위에 지붕을 만드는 함수  
-Indoor 함수  
+void Indoor(int x, int y, int z)  
 : 카펫과 의자, 무늬 등 성 내부를 꾸미는 함수  
-Outdoor 함수  
+void Outdoor(int x, int y, int z)   
 : 성 외부를 꾸미는 함수  
-Window 함수  
+void Window(int x, int y, int z)  
 : 성의 중심이 되는 원기둥에 air 블록으로 구멍을 내서 창문을 만드는 함수  
-Light 함수  
+void Light(int x, int y, int z)  
 : 큰 건물에 있는 샹들리에의 느낌으로 천장에 달려있는 물음표 박스를 만드는 함수  
-Picture 함수   
+void Picture(int x, int y, int z)  
 : 성벽에 마리오와 루이지의 그림을 그려서 마리오의 집이라는 것을 표현하는 함수  
-doohong 함수  
+void doohong(int x, int y, int z)   
 : 위의 함수들을 모두 합쳐서 좌표 하나를 기준으로 성 전체를 만드는 함수  
-Car 함수   
+void ***Color***_Car_***Direction***(int x, int y, int z)
 : 색깔별로 차를 만드는 함수, 앞을 보는 차와 뒤를 보는 차 두가지로 frontside와 backside로 나누어서 만들었다.  
 
