@@ -93,8 +93,8 @@ void Picture(int x, int y, int z)
 void doohong(int x, int y, int z)   
 : 위의 함수들을 모두 합쳐서 좌표 하나를 기준으로 성 전체를 만드는 함수  
 void ***Color***Car***Direction***(int x, int y, int z)  
-: 색깔별로 차를 만드는 함수, 앞을 보는 차와 뒤를 보는 차 두가지로 frontside와 backside로 나누어서 만들었다.    
-###도균  
+: 색깔별로 차를 만드는 함수, 앞을 보는 차와 뒤를 보는 차 두가지로 frontside와 backside로 나누어서 만들었다.      
+### 도균  
 void startline(int px, int py, int pz)  
 : 출발선  
 void road_straight1(int px, int py, int pz)  
@@ -121,6 +121,24 @@ void road_turnright4(int px, int py, int pz)
 : -x방향 직선- > -z방향 직선으로 갈 때 코너  
 void imsi_straight(int px, int py, int pz)  
 : 길이가 모자른 직선트랙 마저 채워주는 함수  
+void left_storefloor(int px, int py, int pz)  
+: 발판의 +x축 방향 (cosists of 발판)  
+void right_storefloor(int px, int py, int pz)  
+: 발판의 -x축 방향 (cosists of 발판)  
+void north_storefloor(int px, int py, int pz)  
+: 발판의 -z축 방향 (cosists of 발판)  
+void south_storefloor(int px, int py, int pz)  
+: 발판의 +z축 방향 (cosists of 발판)  
+void storepillar(int px, int py, int pz)  
+: 차고의 기둥  
+void carstore(int px, int py, int pz)    
+: 차고의 발판    
+void make_track(int px, int py, int pz)  
+: 트랙 최종    
+void make_store(int px, int py, int pz)  
+: 차고 최종  
+void dogyun(int px, int py, int pz)  
+: 합칠 때 함수  
 
 
 
